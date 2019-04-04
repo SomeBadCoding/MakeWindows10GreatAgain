@@ -44,3 +44,22 @@ Windows Registry Editor Version 5.00
 # https://technicalustad.com/remove-people-icon-from-taskbar-in-windows-10/
 [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People]
 "PeopleBand"=dword:00000000
+
+#Disable RC4 128/128 Ciphers
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 128/128]
+"DisabledByDefault"=dword:00000001
+"Enabled"=dword:00000000
+
+#Disable Triple DES 168 Ciphers
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\Triple DES 168]
+"DisabledByDefault"=dword:00000001
+"Enabled"=dword:00000000
+
+#Disable SMB1 in LanmanServer
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters]
+"SMB1"=dword:00000000
+
+Disable SMB1 from Starting
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\mrxsmb10]
+"Start"=dword:00000004
+
